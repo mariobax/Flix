@@ -121,6 +121,7 @@
     NSURL *posterURL = [NSURL URLWithString:fullPosterURLString];
     [cell.posterView setImageWithURL:posterURL];
     //cell.textLabel.text = movie[@"title"];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 
