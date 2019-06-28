@@ -119,7 +119,6 @@
     NSString *fullPosterURLString = [baseURLString stringByAppendingString:posterURLString];
     
     NSURL *posterURL = [NSURL URLWithString:fullPosterURLString];
-    cell.posterView.image = nil; // This is for it no not lag: making sure that if no image was loaded that id does not reusa an old one, instead leaves it blank.
     [cell.posterView setImageWithURL:posterURL];
     //cell.textLabel.text = movie[@"title"];
     return cell;
@@ -127,6 +126,7 @@
 
 - (void) reloadData {
     NSString *searchText = self.searchBar.text;
+    NSLog(@"%@", searchText);
     if (searchText.length != 0) {
         
         NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(NSDictionary *evaluatedObject, NSDictionary *bindings) {
@@ -142,10 +142,6 @@
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
     [self reloadData];
-}
-
-- (void)tapDetected {
-    
 }
 
 @end
