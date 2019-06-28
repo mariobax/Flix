@@ -1,8 +1,8 @@
 //
-//  DetailsViewController.h
+//  TrailerViewController.h
 //  Flix
 //
-//  Created by mariobaxter on 6/26/19.
+//  Created by mariobaxter on 6/28/19.
 //  Copyright © 2019 mariobaxter. All rights reserved.
 //
 
@@ -10,9 +10,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface DetailsViewController : UIViewController
+@interface TrailerViewController : UIViewController
 @property (nonatomic, strong) NSDictionary *movie;
-@property (strong, nonatomic) IBOutlet UIImageView *posterView;
 @end
 
 NS_ASSUME_NONNULL_END

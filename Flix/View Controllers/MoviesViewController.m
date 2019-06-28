@@ -144,4 +144,8 @@
     [self reloadData];
 }
 
+- (void)tapDetected {
+    
+}
+
 @end
