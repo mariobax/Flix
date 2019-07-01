@@ -33,6 +33,14 @@
     self.tableView.delegate = self;
     self.searchBar.delegate = self;
     
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    
+    //self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"movies-anywhere-apple-tv.jpg"]];
+    
+    self.tableView.backgroundColor = [UIColor clearColor];
+    self.tableView.opaque = NO;
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"image.jpg"]];
+    
     // Start the activity indicator
     [self.activityIndicator startAnimating];
     
@@ -96,6 +104,8 @@
     
     DetailsViewController *detailsViewController = [segue destinationViewController];
     detailsViewController.movie = movie;
+    
+    [self.tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -121,7 +131,7 @@
     NSURL *posterURL = [NSURL URLWithString:fullPosterURLString];
     [cell.posterView setImageWithURL:posterURL];
     //cell.textLabel.text = movie[@"title"];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    //cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 
@@ -144,5 +154,6 @@
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
     [self reloadData];
 }
+
 
 @end
